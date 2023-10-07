@@ -1,0 +1,318 @@
+/* Variables */
+:root {
+    --background-color: #f1f2f3;
+    --primary-text-color: #333;
+    --secondary-text-color: rgb(77, 160, 77);
+    --font: sans-serif;
+}
+/* Reset */
+*, *::after, *::before {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+    color: #333;
+    font-size: 0.88em;
+}
+
+ul {
+    list-style: none;
+}
+
+body {
+    background: var(--background-color);
+    color: var(--primary-text-color);
+    font-family: var(--font);
+}
+
+/* Container */ 
+.container {
+    width: 100%;
+}
+
+
+header {
+    width: 100%;
+    height: 60px;
+    border-bottom: 1px solid #ccc;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.5rem 1.5rem;
+}
+
+header .left {
+    display: flex;
+    align-items: center;
+    gap: 35px;
+}
+
+header .left a {
+    position: relative;  
+    font-weight: bold;  
+}
+
+header .left a:hover {
+    color: var(--secondary-text-color);
+}
+
+.headerlinks-span-rotate {
+    position: absolute;
+    top: -3px;
+    margin-left: 10px;
+    transform: rotate(90deg);
+    font-size: 1.3em;
+}
+
+.rotate {
+    transform: rotate(-90deg);
+    transition: transform 500ms ease-in-out;
+}
+
+header .center {
+    margin: 5px 0 0 0;
+}
+
+header .right {
+    display: flex;
+    align-items: center;
+    margin-right: 3rem;
+    gap: 1.5rem;
+}
+
+header .right .search {
+    width: 300px;
+    height: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.2rem;
+    border-radius: 7px;
+    padding: 0 10px;
+}
+
+header .right .search.bg {
+    background-color: #fff;
+}
+
+#search-icon {
+    width: 20px;
+}
+
+header .right .search input {
+    background: transparent;
+    width: 0;
+    border: none;
+    padding: 0.5rem 0.7rem;
+}
+
+header .right .search input.addOpacity {
+    width: 90%;
+}
+
+header .right .search input:focus {
+    outline: none;
+}
+
+header .right img {
+    width: 20px;
+}
+
+/* Navbar */
+
+nav.navbar {
+    padding: 0 15px;
+    display: flex;
+    align-items: center;
+    position: relative;
+    border-bottom: 1px solid #ccc;
+}
+
+.nav-links-outer {
+    width: 100%;
+    overflow: hidden;
+    padding: 10px 15px;
+    position: relative;
+    /* background: #ccc; */
+    height: 40px;
+}
+
+.right-arrow, .left-arrow {
+    position: absolute;
+    font-weight: bold;
+    font-size: 1.2em;
+    color: #333;
+    margin: 0 10px;
+    background: #d6d6d6;
+    padding: 5px 10px;
+    z-index: 10;
+    border-radius: 50%;
+}
+
+.left-arrow:hover, .right-arrow:hover {
+    cursor:pointer;
+    color: var(--secondary-text-color);
+}
+
+.right-arrow {
+    right: 0;
+    z-index: 10;
+}
+
+.left-arrow {
+    left: 0;
+}
+
+.nav-links-inner {
+    position: absolute;
+    left: 10px;
+    display: flex;
+    text-wrap: nowrap;
+    gap: 2rem;
+    padding: 0 20px;
+    transition: left .5s ease-in-out;
+}
+
+.link a:hover {
+    color: var(--secondary-text-color);
+}
+
+
+.main-container {
+    width: 100%;
+    justify-content: space-between;
+    display: flex;
+    padding: 0 20px;
+    position: relative;
+}
+
+section.one {
+    flex: 1;
+    height: 100vh;
+    overflow-y: scroll;
+    position: sticky;
+    top: 0;
+}
+
+section.one ul {
+    display: flex;
+    flex-direction: column;
+    /* gap: 20px; */
+}
+
+section.one ul li {
+    border-bottom: 1px solid #ccc;
+    padding: 20px 5px;
+    font-size: 0.85em;
+}
+
+section.one ul li a:hover {
+    color: var(--secondary-text-color);
+    font-weight: bold;
+    font-size: 0.85em;
+}
+
+section.two {
+    flex: 3.5;
+    background: #fff;
+    margin: 0 5px;
+    padding: 30px 35px;;
+}
+
+.navigation {
+    width: 100%;
+    height: 50px;
+    border: 1px solid #e7e7e7;
+    padding: 20px 20px 15px 20px;
+    margin: 20px 0;
+    display: flex;
+    justify-content: space-between;
+    font-size: 1.1em;
+    position: relative;
+    border-radius: 4px;
+}
+
+.navigation-links {
+    display: flex;
+    align-items: center;
+}
+.navigation-links .a-link {
+    margin-right: 30px;
+    position: relative;
+}
+
+
+.navigation-links .a-link a.active {
+    padding-bottom: 3px;
+    border-bottom: 4px solid var(--secondary-text-color);
+    border-bottom-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+    transition: border 0.5s ease-in;
+    transition-timing-function:cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+span.side-dots {
+    position: absolute;
+    right: 10px;
+    transform: rotate(90deg);
+    cursor: pointer;
+    font-size: 1.1em;
+    font-weight: bold;
+    top: 13px;
+}
+
+.content {
+    width: 100%;
+}
+
+.content h2 {
+    margin: 25px 0;
+}
+
+.content p {
+    line-height: 1.7;
+    font-size: 1.1em;
+}
+.content .lesson {
+    width: 100%;
+}
+
+.content .lesson ul {
+    list-style-type: disc;
+    margin-left: 30px;
+}
+
+.content .lesson ul li {
+    margin: 20px 0;
+    font-size: 1.1em;
+}
+
+.content .lesson ul li span {
+    font-weight: bold;
+}
+
+.content .lesson .js-image {
+    width: 768px;
+    height: 480px;
+    background-image: url(./assets/JavaScript-Introduction.jpg);
+    background-position: center/center;
+    background-repeat: no-repeat;
+    margin: 40px 20px;
+    position: relative;
+}
+
+.content .lesson .js-image figure {
+    position: absolute;
+    bottom: 5px;
+    right: 50%;
+}
+
+section.three {
+    flex: 1;
+}
+
+
+
